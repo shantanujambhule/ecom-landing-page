@@ -81,6 +81,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
         <h3 className="font-semibold mb-2">Price Range (Up to ₹{priceRange})</h3>
         <input
           type="range"
+          placeholder='Price Range'
           min={100}
           max={5000}
           step={100}
