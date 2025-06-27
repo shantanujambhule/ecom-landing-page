@@ -2,12 +2,12 @@
 
 import { useAppContext } from '../context/AppContext';
 import CartItem from '../components/CartItem';
-import { useRouter } from 'next/navigation';
+
 
 
 export default function CartPage() {
   const { cart } = useAppContext();
-  const router = useRouter();
+ 
 
   const totalPrice = cart.reduce((acc, item) => acc + item.price, 0);
 
