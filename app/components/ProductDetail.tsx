@@ -14,6 +14,7 @@ interface Product {
   description: string;
   category: string;
   rating?: number;
+  quantity?: number;
 }
 
 const ProductDetail = ({ product }: { product: Product }) => {
@@ -28,7 +29,7 @@ const ProductDetail = ({ product }: { product: Product }) => {
 
   return (
     <div className="flex flex-col lg:flex-row gap-10">
-      {/* Image */}
+      {/* Product Image */}
       <div className="w-full lg:w-1/2">
         <Image
           src={validImage}
@@ -39,7 +40,7 @@ const ProductDetail = ({ product }: { product: Product }) => {
         />
       </div>
 
-      {/* Details */}
+      {/* Product Info */}
       <div className="w-full lg:w-1/2 space-y-4">
         <h1 className="text-3xl font-bold">{product.title}</h1>
         <p className="text-red-600 text-xl font-semibold">₹{product.price}</p>
@@ -49,7 +50,7 @@ const ProductDetail = ({ product }: { product: Product }) => {
           <span className="font-semibold">Category:</span> {product.category}
         </p>
 
-        {/* Quantity Selector */}
+        {/* Quantity Input */}
         <div className="flex items-center gap-2 mt-4">
           <label htmlFor="quantity" className="font-medium">Quantity:</label>
           <input
@@ -62,6 +63,7 @@ const ProductDetail = ({ product }: { product: Product }) => {
           />
         </div>
 
+        {/* Add to Cart Button */}
         <button
           onClick={handleAddToCart}
           className="bg-red-600 text-white px-6 py-3 rounded-md mt-4 hover:bg-red-700 flex items-center gap-2"

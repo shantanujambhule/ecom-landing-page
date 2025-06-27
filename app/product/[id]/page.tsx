@@ -6,7 +6,7 @@ interface Props {
   params: { id: string };
 }
 
-export default async function ProductPage({ params }: Props) {
+export default function ProductPage({ params }: Props) {
   const productId = parseInt(params.id);
   const product = mockProducts.find((p) => p.id === productId);
 
