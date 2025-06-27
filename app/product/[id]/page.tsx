@@ -1,12 +1,7 @@
-// app/product/[id]/page.tsx
 import ProductDetail from '@/app/components/ProductDetail';
 import mockProducts from '@/app/data/mockProducts';
 
-interface Props {
-  params: { id: string };
-}
-
-export default function ProductPage({ params }: Props) {
+export default function ProductPage({ params }: { params: { id: string } }) {
   const productId = parseInt(params.id);
   const product = mockProducts.find((p) => p.id === productId);
 
