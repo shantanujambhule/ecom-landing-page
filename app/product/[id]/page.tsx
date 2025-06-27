@@ -1,7 +1,11 @@
 import ProductDetail from '@/app/components/ProductDetail';
 import mockProducts from '@/app/data/mockProducts';
 
-export default function ProductPage({ params }: { params: { id: string } }) {
+interface PageProps {
+  params: { id: string };
+}
+
+export default function ProductPage({ params }: PageProps) {
   const productId = parseInt(params.id);
   const product = mockProducts.find((p) => p.id === productId);
 
